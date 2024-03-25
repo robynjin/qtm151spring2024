@@ -97,11 +97,11 @@ alies, e.g. ``` ... AS ... ```
 
 
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres@public
+-- Active: 1710938581775@@127.0.0.1@5432@postgres
 -- Write your own code
 
-
-
+SELECT COUNT(DISTINCT nationality) FROM homework_data AS nationality_unique;
+SELECT COUNT(*) FROM homework_data AS homework_length
 
 -- SQLBook: Markup
 <font size = "5">
@@ -116,11 +116,14 @@ alies, e.g. ``` ... AS ... ```
 HINT: See the end of lectures 16 for details <br>
 
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres@public
+-- Active: 1710938581775@@127.0.0.1@5432@postgres
 -- Write your own code
 
-
-
+SELECT driver_id,
+       AVG(lap_times) AS mean_lap_times
+FROM homework_data
+GROUP BY driver_id
+ORDER BY mean_lap_times;
 
 -- SQLBook: Markup
 <font size = "5">
@@ -138,11 +141,15 @@ HINT: Use ```HAVING SUM(lap_times)``` rather than an alias <br>
 for the code to work correctly.
 
 -- SQLBook: Code
+-- Active: 1710938581775@@127.0.0.1@5432@postgres
 
 # Write your own code
 
-
-
+SELECT nationality,
+       SUM(lap_times) AS sum_lap_times
+FROM homework_data
+GROUP BY nationality
+HAVING SUM(lap_times) > 150
 
 -- SQLBook: Markup
 <font size = "5">
@@ -167,6 +174,6 @@ HINT: To insert a string value, use 'single quotations'
 -- SQLBook: Code
 -- Write your own code
 
-
+DROP TABLE 
 
 
