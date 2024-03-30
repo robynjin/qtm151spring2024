@@ -178,8 +178,8 @@ HINT: To insert a string value, use 'single quotations'
 DROP TABLE IF EXISTS lap_times;
 
 CREATE TABLE lap_times(
-    raceId int,
-    driverId int,
+    "raceId" int,
+    "driverId" int,
     lap int,
     position int,
     time varchar(255),
