@@ -195,7 +195,9 @@ Try it yourself!
 with more than 60 victories
 -- SQLBook: Code
 -- Write your own code!
-SELECT driver_name, nationality, driver_id, victories FROM drivers;
+SELECT driver_id, nationality FROM drivers
+GROUP BY driver_id, nationality
+HAVING SUM(victories) > 60;
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Groupby + Chaining </span>
