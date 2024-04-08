@@ -69,7 +69,8 @@ CREATE TABLE drivers(
 
 Add rows to table
 -- SQLBook: Code
--- "INSErT INTO" adds rows with VALUES ... to the bottom of the table
+-- Active: 1710938581775@@127.0.0.1@5432@postgres
+-- "INSERT INTO" adds rows with VALUES ... to the bottom of the table
 -- In SQL different lines need to be separated by a semicolon ";"
 -- You write system commands in capital letters to easily distinguish
 -- column names from system commands
@@ -196,9 +197,7 @@ with more than 60 victories
 -- SQLBook: Code
 -- Write your own code!
 SELECT driver_id, nationality FROM drivers
-GROUP BY driver_id, nationality
-HAVING SUM(victories) > 60;
-
+WHERE victories > 60;
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Groupby + Chaining </span>
 
@@ -206,7 +205,7 @@ HAVING SUM(victories) > 60;
 
 Groupby + Aggregate
 -- SQLBook: Code
--- This command computes summary statistics by nationalitySELECT COUNT(*) AS num_rows,
+-- This command computes summary statistics by nationality SELECT COUNT(*) AS num_rows,
 -- Including "nationality" (the grouping column) is optional in the select
 SELECT nationality,
        SUM(victories) AS sum_victories,
