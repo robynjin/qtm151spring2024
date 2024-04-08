@@ -100,8 +100,9 @@ alies, e.g. ``` ... AS ... ```
 -- Active: 1710938581775@@127.0.0.1@5432@postgres
 -- Write your own code
 
-SELECT COUNT(DISTINCT nationality) FROM homework_data AS nationality_unique;
-SELECT COUNT(*) FROM homework_data AS homework_length
+SELECT COUNT(DISTINCT nationality), 
+        COUNT(*) as homework_length
+        FROM homework_data AS nationality_unique;
 
 -- SQLBook: Markup
 <font size = "5">
